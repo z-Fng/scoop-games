@@ -8,8 +8,8 @@
         "If you own the games on Steam, the Windows installer will automatically detect it and copy the resources over for you.",
         "",
         "If you want to copy things over manually, you can find the Steam game folders at:",
-        "　　UFO: 'Steam\\SteamApps\\common\\XCom UFO Defense\\XCOM'",
-        "　　TFTD: 'Steam\\SteamApps\\common\\X-COM Terror from the Deep\\TFD'"
+        "   UFO: 'Steam\\SteamApps\\common\\XCom UFO Defense\\XCOM'",
+        "   TFTD: 'Steam\\SteamApps\\common\\X-COM Terror from the Deep\\TFD'"
     ],
     "url": "https://openxcom.org/git_builds/openxcom_git_master_2024_02_28_0704.zip",
     "hash": "0d7e728aa7352ca04d790e08b83c4d70c7efb88509ad7be3f0ea161d965502e5",
@@ -27,6 +27,7 @@
         ]
     ],
     "checkver": {
+        "useragent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36",
         "url": "https://openxcom.org/git-builds/",
         "regex": "openxcom_git_master_([\\d_]+)\\.zip"
     },
