@@ -1,0 +1,57 @@
+{
+    "version": "3.9.1",
+    "description": "一款帮助用户整理文件和文件夹的现代文件管理器。A modern file manager that helps users organize their files and folders.",
+    "homepage": "https://files.community/",
+    "license": {
+        "identifier": "MIT",
+        "url": "https://github.com/files-community/Files/blob/main/LICENSE"
+    },
+    "architecture": {
+        "64bit": {
+            "url": "https://cdn.files.community/files/stable/Files.Package_3.9.1.0_Test/Files.Package_3.9.1.0_x64_arm64.msixbundle",
+            "hash": "9e9b85f71b8fc9b573c1d72b7815bac88f6a237f518a6dca920fe25f933e42c8"
+        },
+        "arm64": {
+            "url": "https://cdn.files.community/files/stable/Files.Package_3.9.1.0_Test/Files.Package_3.9.1.0_x64_arm64.msixbundle",
+            "hash": "9e9b85f71b8fc9b573c1d72b7815bac88f6a237f518a6dca920fe25f933e42c8"
+        }
+    },
+    "pre_install": [
+        "$bucket = if ($bucket) { $bucket } else { (scoop config).'abgox-abyss-bucket-name' }",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "A-Start-Install",
+        "$PackageFamilyName = A-Add-MsixPackage 'Files_1y0xx7n9077q4'",
+        "A-New-LinkDirectory @(\"$env:LocalAppData\\Packages\\$PackageFamilyName\\LocalState\")"
+    ],
+    "post_install": [
+        "$bucket = if ($bucket) { $bucket } else { (scoop config).'abgox-abyss-bucket-name' }",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "A-Complete-Install"
+    ],
+    "pre_uninstall": [
+        "$bucket = if ($install.bucket) { $install.bucket } else { (scoop config).'abgox-abyss-bucket-name' }",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "A-Start-Uninstall",
+        "A-Stop-Process",
+        "A-Remove-Link",
+        "A-Remove-MsixPackage"
+    ],
+    "post_uninstall": [
+        "$bucket = if ($install.bucket) { $install.bucket } else { (scoop config).'abgox-abyss-bucket-name' }",
+        ". \"$bucketsdir\\$bucket\\bin\\utils.ps1\"",
+        "A-Complete-Uninstall"
+    ],
+    "checkver": {
+        "github": "https://github.com/files-community/Files"
+    },
+    "autoupdate": {
+        "architecture": {
+            "64bit": {
+                "url": "https://cdn.files.community/files/stable/Files.Package_$version.0_Test/Files.Package_$version.0_x64_arm64.msixbundle"
+            },
+            "arm64": {
+                "url": "https://cdn.files.community/files/stable/Files.Package_$version.0_Test/Files.Package_$version.0_x64_arm64.msixbundle"
+            }
+        }
+    }
+}
