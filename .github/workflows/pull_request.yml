@@ -9,6 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: PullRequestHandler
-      uses: ScoopInstaller/GithubActions@main
+      uses: z-Fng/GithubActions@refact-log
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
