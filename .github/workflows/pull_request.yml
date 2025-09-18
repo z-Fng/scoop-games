@@ -9,6 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: PullRequestHandler
-      uses: z-Fng/GithubActions@refact-log
+      uses: z-Fng/GithubActions@add-json-format-check
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
