@@ -9,6 +9,6 @@ jobs:
     steps:
     - uses: actions/checkout@main
     - name: PullRequestHandler
-      uses: ScoopInstaller/GithubActions@main
+      uses: z-Fng/GithubActions@add-decompress-error-tip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
